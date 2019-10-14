@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mini_app_hirano</title>
+  <style type="text/css" href="./style.css"></style>
+</head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+
+    <%# アイコン用リンク？ %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+    <script   src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+
+<body>
+ <nav class="green lighten-3">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><i class="material-icons">folder_special</i>Job Log</a>
+      <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><a href="/logs/new"><i class="tab_left">Today's job</i></a></li>
+        <li><a href="/users/sign_out"><i class="tab_right">Sign out</i></a></li>
+        <li class="username">Current user: <%= current_user.user_name %></li>
+      <% elsif %>
+        <li><a href="/users/sign_in"><i class="tab_lef">Sign in</i></a></li>
+       
+        <li><a href="/users/sign_up"><i class="tab_right2">new account</i></a></li>
+      <% end %>
+      </ul>
+    </div>
+  </nav>
+
+<%= yield %>
+
+
+<script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<div class="content_post">
+    <br>
+    <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card #ef9a9a red lighten-3">
+        <div class="card-content white-text">
+          <span class="card-title"><%= @log.date %></span>
+          <span class="card-title"><%= @log.title %></span>
+          <span class="card-title"><%= @log.user.user_name %></span>
+          <p>業務内容:<%= simple_format(@log.logs) %></p>
+           <p>課題：<%= simple_format(@log.problem) %></p>
+        </div>
+     <div class="card-action white">
+          <% if user_signed_in? && current_user.id == @log.user.id %>
+          <div class="waves-effect waves-light btn">
+         <%= button_to '編集', "/logs/#{@log.id}/edit", method: :get %>
+         </div>
+        
+          <div class="waves-effect waves-light btn">
+          <%= button_to '削除', "/logs/#{@log.id}", method: :delete %>
+           </div>
+          <% end %>
+     </div>
+     </div>
+          <br>
+    <div class="container">
+    <% if current_user %>
+       <%= form_with(model: @comment, url:"/logs/#{@log.id}/comments" ,local: true) do |form| %>
+        <div>コメント欄</div>
+        <textarea cols="30" name="comment" placeholder="コメントする" rows="2"></textarea>
+        <input type="submit" value="SENT">
+      <% end %>
+    <% end %>
+    <div class="comments">
+      <% if @comments %>
+      <h6>＜コメント一覧＞</h6>
+        <% @comments.each do |comment| %>
+          <p class="advise">
+            <%= comment.comment %>
+            <br>
+            <h5 class="commenter">(<%= comment.user.user_name %>さん)</h5>
+          </p>
+        <% end %>
+      <% end %>

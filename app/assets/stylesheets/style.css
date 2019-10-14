@@ -1,0 +1,93 @@
+/* // Place all the styles related to the logs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: c */
+
+.pagination {
+  text-align: center;
+}
+
+.brand-logo {
+  margin-left: 40px;
+}
+
+.tab_left {
+  font-size: 24px;
+}
+
+.tab_right {
+  font-size: 24px;
+}
+
+.tab_right2 {
+  font-size: 24px;
+  padding-right: 18px;
+}
+
+.btn {
+  background-color: #ffccbc;
+}
+
+.page_title {
+  margin-top: 40px;
+  text-align:center;
+}
+
+.submit {
+  text-align:center;
+}
+
+.account_page {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.card-name {
+  margin-left: 40px;
+}
+
+.card-logs {
+  font-size: 30px;
+}
+
+.advise {
+  font-size: 24px;
+  color: orange;
+}
+
+.commenter {
+  font-size: 20px;
+  text-align:right;
+}
+
+.comments {
+  margin-top: 40px;
+}
+
+.ranking_box {
+  right: 0;
+  margin: 20px 50px 0 0;
+  position :fixed;
+}
+
+.ranking_box p {
+  margin: 0;
+  font-size: 14px;
+  text-align: right;
+}
+
+.ranking_box span {
+  margin: 0;
+  font-size: 20px;
+  text-align: right;
+}
+
+.search_box {
+  left: 0;
+  margin: 20px 50px 0 0;
+  position :fixed;
+}
+
+.username {
+ padding-right: 20px;
+ font-size: 16px;
+}

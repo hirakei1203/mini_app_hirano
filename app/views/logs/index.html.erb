@@ -1,0 +1,50 @@
+
+<div class="ranking_box">
+   <div class="row">
+    <div class="col s12 m12">
+      <div class="card-panel teal">
+        <span class="white-text"> 
+        <h5>コメント数ランキング</h5>
+         　 <% @ranking.each.with_index do |user, i| %>
+         <p><span><%= i+1 %>.<%= user.user_name %></span>さん<br></p>
+            　<% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="search_box">
+<div class="row">
+    <div class="col s12 m10">
+      <div class="card-panel lime lighten-3">
+        <span class="white-text"> 
+          <%= search_form_for @q do |f| %>
+          <%= f.label :検索フォーム %>
+          <%= f.search_field :logs_or_problem_or_title_cont %>
+          <%= f.submit %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% @logs.each do |log| %>
+   
+
+<br>
+<%= render partial: "log", locals: { log: log } %>
+
+  
+<% end %>
+
+
+  
+
+<%= paginate(@logs) %>
+
+
+
+
