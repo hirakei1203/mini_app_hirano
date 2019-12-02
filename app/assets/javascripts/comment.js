@@ -65,10 +65,5 @@ $(function(){
     .fail(function() {
     });
   };
-
-<<<<<<< HEAD
   // setInterval(reloadMessages, 5000);
-=======
-  setInterval(reloadMessages, 5000);
->>>>>>> bfed0e16f3d52e45866ebec9cfa80b0a172226c5
 })
