@@ -1,0 +1,2 @@
+class SnsCredentialController < ApplicationController
+end

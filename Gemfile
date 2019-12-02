@@ -68,3 +68,7 @@ gem 'sprockets', '3.7.2'
 gem 'devise'
 gem 'kaminari'
 gem 'ransack'
+gem 'jquery-rails'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

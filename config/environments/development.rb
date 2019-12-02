@@ -58,4 +58,8 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # 以下のコードにて、Oauthの使用を許可するために、protect_form_forgeryを無効化したかったが、機能しない。。。
+  # config.action_controller.forgery_protection_origin_check = false
+  # config.action_controller.allow_forgery_protection = false
 end

@@ -261,6 +261,15 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
+  # デプロイ時は環境変数に変更すること！！
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+  # ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']に変更予定
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+  # "382469189404-gb1cl7gg8vjprbl5kv5duc0u524l9fbf.apps.googleusercontent.com", "n6wjZEAA5WgK6qhsmfZUDVmy"
+  # ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']に変更予定
+  # export ENV['FACEBOOK_APP_ID'] = "2202164806743492"
+  # export ENV['FACEBOOK_APP_SECRET'] = "e8da18cf72f4ca8d494445a274c341be"
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -7,17 +7,36 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-
+    <%= csrf_meta_tags %>
 
     <%# アイコン用リンク？ %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script   src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+    <script src="https://kit.fontawesome.com/5e1d0a7536.js" crossorigin="anonymous"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 <body>
- <nav class="green lighten-3">
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2202164806743492',
+      xfbml      : true,
+      version    : 'v5.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+ <nav class="green lighten-3 header">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo"><i class="material-icons">folder_special</i>Job Log</a>
       <ul class="right hide-on-med-and-down">
@@ -26,9 +45,25 @@
         <li><a href="/users/sign_out"><i class="tab_right">Sign out</i></a></li>
         <li class="username">Current user: <%= current_user.user_name %></li>
       <% elsif %>
-        <li><a href="/users/sign_in"><i class="tab_lef">Sign in</i></a></li>
-       
-        <li><a href="/users/sign_up"><i class="tab_right2">new account</i></a></li>
+        <% if Rails.env.development? %>
+          <li><a href="/users/sign_up"><i class="tab_right2">new account</i></a></li>        
+          <li><a href="/users/sign_in"><i class="tab_lef">Sign in</i></a></li>  
+          <%= link_to user_google_oauth2_omniauth_authorize_path, class: "google_oauth", method: :post do %>
+          with <i class="fab fa-google"></i>
+          <% end %>
+          <%= link_to user_facebook_omniauth_authorize_path, class: "facebook_oauth", method: :post do %>
+          with <i class="fab fa-facebook-square"></i>
+          <% end %>
+        <% elsif %>
+          <li><a href="/users/sign_up"><i class="tab_right2">new account</i></a></li>        
+          <li><a href="/users/sign_in"><i class="tab_lef">Sign in</i></a></li>  
+          <%= link_to '#', class: "google_oauth", method: :post do %>
+          with <i class="fab fa-google"></i>
+          <% end %>
+          <%= link_to '#', class: "facebook_oauth", method: :post do %>
+          with <i class="fab fa-facebook-square"></i>
+          <% end %>       
+        <% end %>
       <% end %>
       </ul>
     </div>
@@ -37,6 +72,6 @@
 <%= yield %>
 
 
-<script type="text/javascript" src="./app.js"></script>
+<%# <script type="text/javascript" src="./app.js"></script> %>
 </body>
 </html>

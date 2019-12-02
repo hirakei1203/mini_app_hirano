@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row main-cards">
     <div class="col s6 offset-s3">
-      <div class="card #ef9a9a red lighten-3">
+      <div class="card #ef9a9a red lighten-3 card_margin">
         <div class="card-content white-text">
           <span class="card-title"><%= log.date %></span>
           <span class="card-title"><%= log.title %></span>
@@ -10,22 +10,18 @@
           <p>課題：<%= simple_format(log.problem) %></p>
         </div>
         <div class="card-action white">
-        <div class="waves-effect waves-light btn">
-         <%= button_to "詳細", "/logs/#{log.id}", method: :get %>
-         </div>
+          <div class="waves-effect waves-light btn btn_z_index">
+          <%= button_to "詳細", "/logs/#{log.id}", method: :get %>
+          </div>
           <% if user_signed_in? && log.user.id == current_user.id %>　
-          <div class="waves-effect waves-light btn"> 
-         <%= button_to '編集', "/logs/#{log.id}/edit", method: :get %>
-         </div>
-         <div class="waves-effect waves-light btn">
-         <%= button_to '削除', "/logs/#{log.id}", method: :delete %>
-         </div>
+           <div class="waves-effect waves-light btn btn_z_index"> 
+            <%= button_to '編集', "/logs/#{log.id}/edit", method: :get %>
+           </div>
+           <div class="waves-effect waves-light btn btn_z_index">
+            <%= button_to '削除', "/logs/#{log.id}", method: :delete %>
+           </div>
           <% end %>
-      </div>
+        </div>
       </div>
     </div>
-
-        
-
-     
-  </div>
+</div>
