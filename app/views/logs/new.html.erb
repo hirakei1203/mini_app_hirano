@@ -1,5 +1,4 @@
-<%# 
-<div class="contents row"> %>
+
 <div class="content_post main-cards">
   <div class="container">
     <%= form_with(model: @log, url:"/logs" ,local: true) do |form| %>
@@ -18,7 +17,7 @@
      </div>
     </div>
     <div class="submit">
-    <%# <%= form.submit "報告する" %> 
+
     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
     </button>

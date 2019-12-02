@@ -3,7 +3,7 @@
 <head>
   <title>mini_app_hirano</title>
   <style type="text/css" href="./style.css"></style>
-</head>
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -18,28 +18,8 @@
     <script src="https://kit.fontawesome.com/5e1d0a7536.js" crossorigin="anonymous"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-<body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '2202164806743492',
-      xfbml      : true,
-      version    : 'v5.0'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
+</head>
 <body>
  <nav class="green lighten-3 header">
     <div class="nav-wrapper">

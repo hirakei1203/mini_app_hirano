@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: c */
 
+
+
 .header {
   position: fixed;
+  top: 0;
   z-index:1;
 }
 
@@ -150,3 +153,6 @@
   margin: 0 auto;
 }
 
+.device_body{
+ padding: 150px 200px;
+}
