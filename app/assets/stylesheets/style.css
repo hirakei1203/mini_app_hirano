@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: c */
 
+.header {
+  position: fixed;
+  z-index:1;
+}
+
 .pagination {
   text-align: center;
 }
@@ -50,13 +55,16 @@
 }
 
 .advise {
-  font-size: 24px;
+  font-size: 20px;
   color: orange;
+  margin: 0px;
+  margin-top: 10px;
 }
 
 .commenter {
-  font-size: 20px;
+  font-size: 14px;
   text-align:right;
+  margin: 0;
 }
 
 .comments {
@@ -67,6 +75,7 @@
   right: 0;
   margin: 20px 50px 0 0;
   position :fixed;
+  padding-top: 64px;
 }
 
 .ranking_box p {
@@ -85,9 +94,21 @@
   left: 0;
   margin: 20px 50px 0 0;
   position :fixed;
+  padding-top: 64px;
+  padding-left: 20px;
 }
 
 .username {
  padding-right: 20px;
  font-size: 16px;
 }
+
+.main-cards {
+  padding-top: 70px;
+  margin-bottom: 0px;
+}
+
+.card_margin {
+  margin: 0px;
+}
+

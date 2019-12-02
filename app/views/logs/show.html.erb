@@ -1,4 +1,4 @@
-<div class="content_post">
+<div class="content_post main-cards">
     <br>
     <div class="row">
     <div class="col s6 offset-s3">
@@ -25,9 +25,9 @@
           <br>
     <div class="container">
     <% if current_user %>
-       <%= form_with(model: @comment, url:"/logs/#{@log.id}/comments" ,local: true) do |form| %>
+       <%= form_with(model: @comment, url:"/logs/#{@log.id}/comments" ,local: true, id: :new_comment) do |form| %>
         <div>コメント欄</div>
-        <textarea cols="30" name="comment" placeholder="コメントする" rows="2"></textarea>
+        <textarea cols="30" name="comment" placeholder="コメントする" rows="2" class="textbox"></textarea>
         <input type="submit" value="SENT">
       <% end %>
     <% end %>
@@ -35,7 +35,7 @@
       <% if @comments %>
       <h6>＜コメント一覧＞</h6>
         <% @comments.each do |comment| %>
-          <p class="advise">
+          <p class="advise" data-id="<%= comment.id %>">
             <%= comment.comment %>
             <br>
             <h5 class="commenter">(<%= comment.user.user_name %>さん)</h5>

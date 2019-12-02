@@ -4,8 +4,14 @@ Rails.application.routes.draw do
   root to: "logs#index"  
   resources :logs do
     resources :comments, only: [:create] 
+    namespace :api do
+      resources :comments, only: :index, defaults: { format: 'json' }
+    end
   end
+  
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
+  
 end
