@@ -14,10 +14,10 @@
     <script   src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 <body>
- <nav class="green lighten-3">
+ <nav class="green lighten-3 header">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo"><i class="material-icons">folder_special</i>Job Log</a>
       <ul class="right hide-on-med-and-down">
@@ -37,6 +37,6 @@
 <%= yield %>
 
 
-<script type="text/javascript" src="./app.js"></script>
+<%# <script type="text/javascript" src="./app.js"></script> %>
 </body>
 </html>
